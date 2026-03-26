@@ -1,34 +1,124 @@
-![👋 Hello, this is Henry](https://railsware.com/blog/wp-content/uploads/2021/11/featured_image.jpg)
+<div align="center">
 
-<div id="toc">
-  <ul align="center" style="list-style: none">
-    <summary>
-      <h1>
-        👋 Hello, this is Henry
-      </h1>
-    </summary>
-  </ul>
+<!-- Dynamic typing header -->
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=Hey%2C+I'm+Henry+Chen+%F0%9F%91%8B;Full-Stack+Developer+%7C+Sydney+%F0%9F%87%A6%F0%9F%87%BA)](https://git.io/typing-svg)
+
+<br/>
+
+<a href="https://misoto22.com" target="_blank">
+  <img src="https://img.shields.io/badge/misoto22.com-000?style=for-the-badge&logo=safari&logoColor=white" />
+</a>
+<a href="https://www.linkedin.com/in/henry-misoto22" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="https://www.instagram.com/hry.photography" target="_blank">
+  <img src="https://img.shields.io/badge/Photography-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+
 </div>
 
-**<h3 align="left">Connect with me:</h3>** 
-<p align="left"><a href="https://github.com/Misoto22" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="28" style="margin-right: 4px"></a> <a href="https://www.instagram.com/hry.photography" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" height="28" style="margin-right: 4px"></a> <a href="https://www.linkedin.com/in/henry-misoto22" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="28" style="margin-right: 4px"></a></p>
+<br/>
 
- **<h3 align="left">🚀 Passionate fullstack web developer, creating robust and scalable web applications. Skilled in both front-end and back-end technologies, with a keen eye for user experience and performance optimization.</h3>**
+## `> whoami`
 
-**<h3 align="left">Rapid Fire</h3>**
+```rust
+struct Developer {
+    name: &'static str,
+    location: &'static str,
+    role: &'static str,
+    interests: Vec<&'static str>,
+}
 
-- 💼 I'm currently working on: **💻 Developing interesting web apps**
-- 🌱 I'm currently learning: **Next.js and Swift**
-- 💬 Ask me about: **Python, Java, C, 📷 Photography**
+let henry = Developer {
+    name: "Henry Chen",
+    location: "Sydney, Australia",
+    role: "Full-Stack Developer & System Architect",
+    interests: vec!["Web Apps", "ERP Systems", "Photography"],
+};
+```
 
- **<h3 align="left">Skills</h3>**
+<br/>
 
-<div style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: left;"><img src="https://img.shields.io/badge/JavaScript-F7DF1C?logo=javascript&logoColor=white" height="32" alt="JavaScript" style="margin-right: 4px"> <img src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB" height="32" alt="React" style="margin-right: 4px"> <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" height="32" alt="TypeScript" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Python-306998?logo=python&logoColor=white" height="32" alt="Python" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Java-007396?logo=java&logoColor=white" height="32" alt="Java" style="margin-right: 4px"> <img src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white" height="32" alt="C" style="margin-right: 4px"> <img src="https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white" height="32" alt="R" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Shell-4EAA25?logo=gnu-bash&logoColor=white" height="32" alt="Shell" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white" height="32" alt="Flask" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" height="32" alt="Docker" style="margin-right: 4px"> <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white" height="32" alt="GitHub Actions" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?logo=amazon-aws&logoColor=white" height="32" alt="Amazon AWS" style="margin-right: 4px"> <img src="https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=white" height="32" alt="Firebase" style="margin-right: 4px"></div>
+## ⚡ Tech Stack
 
-<h3 align="left">GitHub Stats</h3>
+<table>
+<tr>
+<td valign="top" width="33%">
 
-<div style="display: flex; gap: 10px;">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=misoto22&theme=react&hide_title=false&hide_rank=false&show_icons=false&include_all_commits=false&count_private=true&line_height=23" alt="GitHub stats Card" />
-  
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=react&hide_title=false&layout=compact&langs_count=6&hide_progress=false&card_width=400" alt="GitHub top-langs Card" />
+**Languages**
+
+![Rust](https://img.shields.io/badge/Rust-000?style=flat-square&logo=rust&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+**Frameworks & Tools**
+
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+
+</td>
+<td valign="top" width="33%">
+
+**Infrastructure**
+
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=flat-square&logo=firebase&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## 📊 GitHub Stats
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=misoto22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&ring_color=58A6FF" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=misoto22&theme=default&hide_border=true&show_icons=true&include_all_commits=true&count_private=true" />
+    <img width="49%" src="https://github-readme-stats.vercel.app/api?username=misoto22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&ring_color=58A6FF" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=github_dark&hide_border=true&layout=compact&langs_count=8" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=default&hide_border=true&layout=compact&langs_count=8" />
+    <img width="41%" src="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=github_dark&hide_border=true&layout=compact&langs_count=8" />
+  </picture>
+</div>
+
+<br/>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=misoto22&theme=github-dark-blue&hide_border=true&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com?user=misoto22&theme=default&hide_border=true" />
+    <img width="60%" src="https://github-readme-streak-stats.herokuapp.com?user=misoto22&theme=github-dark-blue&hide_border=true&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" />
+  </picture>
+</div>
+
+<br/>
+
+<!-- Contribution snake animation -->
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/misoto22/misoto22/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/misoto22/misoto22/output/github-snake.svg" />
+    <img alt="Snake animation" src="https://raw.githubusercontent.com/misoto22/misoto22/output/github-snake-dark.svg" />
+  </picture>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=misoto22&style=flat-square&color=58A6FF&label=Profile+Views" />
 </div>
