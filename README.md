@@ -53,14 +53,14 @@ let henry = Developer {
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=misoto22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&ring_color=58A6FF" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=misoto22&theme=default&hide_border=true&show_icons=true&include_all_commits=true&count_private=true" />
-    <img width="49%" src="https://github-readme-stats.vercel.app/api?username=misoto22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&ring_color=58A6FF" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://gh-readme-stats.vercel.app/api?username=misoto22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&ring_color=58A6FF" />
+    <source media="(prefers-color-scheme: light)" srcset="https://gh-readme-stats.vercel.app/api?username=misoto22&theme=default&hide_border=true&show_icons=true&include_all_commits=true&count_private=true" />
+    <img width="49%" src="https://gh-readme-stats.vercel.app/api?username=misoto22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&ring_color=58A6FF" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=github_dark&hide_border=true&layout=compact&langs_count=8" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=default&hide_border=true&layout=compact&langs_count=8" />
-    <img width="41%" src="https://github-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=github_dark&hide_border=true&layout=compact&langs_count=8" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://gh-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=github_dark&hide_border=true&layout=compact&langs_count=8" />
+    <source media="(prefers-color-scheme: light)" srcset="https://gh-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=default&hide_border=true&layout=compact&langs_count=8" />
+    <img width="41%" src="https://gh-readme-stats.vercel.app/api/top-langs?username=misoto22&theme=github_dark&hide_border=true&layout=compact&langs_count=8" />
   </picture>
 </div>
 
