@@ -8,7 +8,7 @@
 
 [misoto22.com](https://misoto22.com) · [LinkedIn](https://www.linkedin.com/in/henry-misoto22) · [Instagram](https://www.instagram.com/hry.photography)
 
-📧 henrycxw@gmail.com · [Resume ↗](https://misoto22.com/files/resume.pdf)
+📧 henrycxw@gmail.com · [Resume ↗](https://files.misoto22.com/resume.pdf)
 
 ---
 
