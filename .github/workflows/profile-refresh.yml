@@ -1,0 +1,74 @@
+name: Refresh Profile
+
+# Keeps the profile README's live sections current without it depending on
+# any outside service at view time. The 3D chart and photo thumbnails are
+# cached on the `output` branch; Recent Writing and the photo captions are
+# committed to the README itself.
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Install Pillow
+        run: python -m pip install pillow==12.3.0
+
+      - name: Fetch light and dark charts
+        run: |
+          set -euo pipefail
+          base="https://contribution.oooo.so/_/Misoto22?chart=3dbar&gap=2&scale=1.8&gradient=true&legend=true&legendPosition=bottomLeft&legendDirection=row&strokeWidth=2&flatten=0&animation=wave&animation_duration=2&animation_delay=0.03&animation_amplitude=40&animation_frequency=0.2&animation_wave_center=0_6&weeks=36&format=svg"
+          mkdir -p dist
+          fetch_chart() {
+            curl --fail --silent --show-error --location --retry 3 --retry-delay 10 \
+              --max-time 60 "$base&$2" -o "dist/$1"
+            # Anything but an SVG must fail the job, so the last good copy stays live.
+            if ! head -c 512 "dist/$1" | grep -q '<svg'; then
+              echo "::error::$1 is not an SVG"
+              exit 1
+            fi
+          }
+          fetch_chart contribution-light.svg "strokeColor=224422&theme=native"
+          fetch_chart contribution-dark.svg "strokeColor=003300&theme=emerald_canopy&dark=true"
+
+      - name: Cache the latest photographs
+        run: python scripts/photos.py --out dist
+
+      - name: Sync recent writing
+        run: python scripts/writing.py
+
+      # Publish the images before the README that points at them.
+      - uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4 # v5.0.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit README changes
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- README.md; then
+            echo "README unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: refresh recent writing and photography"
+          git push
