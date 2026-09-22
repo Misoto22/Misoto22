@@ -73,8 +73,8 @@ I build with coding agents — and the harness that keeps them honest. My work s
 
 <div align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://contribution.oooo.so/_/Misoto22?chart=3dbar&gap=2&scale=1.8&gradient=true&legend=true&legendPosition=bottomLeft&legendDirection=row&strokeWidth=2&strokeColor=003300&flatten=0&animation=wave&animation_duration=2&animation_delay=0.03&animation_amplitude=40&animation_frequency=0.2&animation_wave_center=0_6&weeks=36&theme=emerald_canopy&dark=true&format=svg">
-  <img alt="Henry Chen's GitHub contributions, last 36 weeks" src="https://contribution.oooo.so/_/Misoto22?chart=3dbar&gap=2&scale=1.8&gradient=true&legend=true&legendPosition=bottomLeft&legendDirection=row&strokeWidth=2&strokeColor=224422&flatten=0&animation=wave&animation_duration=2&animation_delay=0.03&animation_amplitude=40&animation_frequency=0.2&animation_wave_center=0_6&weeks=36&theme=native&format=svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Misoto22/Misoto22/output/contribution-dark.svg">
+  <img alt="Henry Chen's GitHub contributions, last 36 weeks" src="https://raw.githubusercontent.com/Misoto22/Misoto22/output/contribution-light.svg">
 </picture>
 
 <sub>3D contribution chart by <a href="https://github.com/CatsJuice/ssr-contributions-img">ssr-contributions-img</a>, made by <a href="https://github.com/CatsJuice">@CatsJuice</a></sub>
