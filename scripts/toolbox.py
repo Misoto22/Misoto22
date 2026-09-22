@@ -16,6 +16,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from readme_block import replace_block
+
 ICON_URL = "https://cdn.jsdelivr.net/npm/simple-icons@{version}/icons/{slug}.svg"
 ICON_VERSION = "16.32.0"
 # Simple Icons later dropped these glyphs; pin the last release that shipped each.
@@ -198,19 +200,7 @@ def readme_block(assets: str) -> str:
             for name, _, _ in tools
         )
         groups.append(f"<p><sub><b>{label.upper()}</b></sub><br>\n{chips}\n</p>")
-    return f"{START_MARKER}\n\n" + "\n\n".join(groups) + f"\n\n{END_MARKER}"
-
-
-def write_readme(readme: Path, block: str) -> None:
-    text = readme.read_text(encoding="utf-8")
-    start, end = text.find(START_MARKER), text.find(END_MARKER)
-    if start == -1 or end == -1:
-        raise ValueError(
-            f"{readme} needs both toolbox markers before it can be updated"
-        )
-    readme.write_text(
-        text[:start] + block + text[end + len(END_MARKER) :], encoding="utf-8"
-    )
+    return "\n\n".join(groups)
 
 
 def main() -> None:
@@ -227,7 +217,9 @@ def main() -> None:
             for name, slug, brand in tools:
                 svg = render_chip(name, icons[slug], icon_color(brand, theme), theme)
                 (folder / f"{file_slug(name)}.svg").write_text(svg, encoding="utf-8")
-    write_readme(args.readme, readme_block(args.out.as_posix()))
+    replace_block(
+        args.readme, START_MARKER, END_MARKER, readme_block(args.out.as_posix())
+    )
     count = sum(len(tools) for _, tools in GROUPS)
     print(
         f"wrote {count} chips x {len(THEMES)} themes to {args.out}, updated {args.readme}"
