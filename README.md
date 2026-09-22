@@ -13,7 +13,7 @@ Agentic Developer · Fullstack Engineer · Photographer · Sydney
 
 <br>
 
-I build with coding agents — and the harness that keeps them honest. My work sits where agents meet real repositories: rule contracts every agent reads, skills that turn a workflow into one command, and scheduled audit loops that land as reviewable pull requests. Underneath, I'm a fullstack engineer shipping React, Django, FastAPI and PostgreSQL on Docker and GitHub Actions. Open to **agentic engineering** and **fullstack** roles.
+I build with coding agents — and the harness that keeps them honest. My work sits where agents meet real repositories: rule contracts every agent reads, skills that turn a workflow into one command, and scheduled audit loops that land as reviewable pull requests. Underneath, I'm a fullstack engineer shipping React, Django, FastAPI and PostgreSQL on Docker and GitHub Actions.
 
 ### Featured Work
 
