@@ -30,6 +30,7 @@ GROUPS = [
         [
             ("Claude Code", "claude", "D97757"),
             ("Codex", "openai", "000000"),
+            ("Cursor", "cursor", "000000"),
             ("MCP", "modelcontextprotocol", "000000"),
             ("LangGraph", "langgraph", "7FC8FF"),
         ],
@@ -41,6 +42,7 @@ GROUPS = [
             ("TypeScript", "typescript", "3178C6"),
             ("Rust", "rust", "000000"),
             ("Swift", "swift", "F05138"),
+            ("Bash", "gnubash", "4EAA25"),
         ],
     ),
     (
@@ -49,6 +51,8 @@ GROUPS = [
             ("React", "react", "61DAFB"),
             ("Next.js", "nextdotjs", "000000"),
             ("Tailwind CSS", "tailwindcss", "06B6D4"),
+            ("Vite", "vite", "9135FF"),
+            ("Radix UI", "radixui", "161618"),
         ],
     ),
     (
@@ -56,7 +60,9 @@ GROUPS = [
         [
             ("Django", "django", "092E20"),
             ("FastAPI", "fastapi", "009688"),
+            ("Node.js", "nodedotjs", "5FA04E"),
             ("PostgreSQL", "postgresql", "4169E1"),
+            ("SQLAlchemy", "sqlalchemy", "D71F00"),
             ("Redis", "redis", "FF4438"),
         ],
     ),
@@ -67,6 +73,8 @@ GROUPS = [
             ("GitHub Actions", "githubactions", "2088FF"),
             ("AWS", "amazonwebservices", "FF9900"),
             ("Cloudflare", "cloudflare", "F38020"),
+            ("Vercel", "vercel", "000000"),
+            ("Terraform", "terraform", "844FBA"),
         ],
     ),
 ]
@@ -78,11 +86,13 @@ END_MARKER = "<!-- toolbox:end -->"
 THEMES = {
     "light": {
         "fg": "#1f2328",
+        "muted": "#59636e",
         "chip": "#f6f8fa",
         "border": "#d1d9e0",
     },
     "dark": {
         "fg": "#f0f6fc",
+        "muted": "#9198a1",
         "chip": "#151b23",
         "border": "#3d444d",
     },
@@ -102,6 +112,8 @@ SAFETY = 1.03
 
 CHIP_HEIGHT = 32
 MARGIN = 3  # transparent gutter, so wrapped rows never touch
+LABEL_WIDTH = 104  # fixed, so every group's chips start in the same column
+LABEL_SIZE = 11
 ICON_SIZE = 16
 FONT_SIZE = 13
 FONT_STACK = (
@@ -189,8 +201,26 @@ def render_chip(name: str, path: str, color: str, theme: dict[str, str]) -> str:
     )
 
 
+def render_label(label: str, theme: dict[str, str]) -> str:
+    """A group label drawn at chip height, so it lines up with the chips beside it."""
+    text = label.upper()
+    # Bold caps with letter spacing run wider than the regular-weight metrics.
+    needed = text_width(text, LABEL_SIZE) * 1.1 + 0.08 * LABEL_SIZE * len(text)
+    if needed > LABEL_WIDTH - 12:
+        raise ValueError(f"Label {label!r} does not fit in {LABEL_WIDTH}px")
+    height = CHIP_HEIGHT + 2 * MARGIN
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{LABEL_WIDTH}" height="{height}" '
+        f'viewBox="0 0 {LABEL_WIDTH} {height}" role="img" aria-label="{label}">'
+        f"<title>{label}</title>"
+        f'<text x="1" y="{height / 2}" dominant-baseline="central" '
+        f'font-family=\'{FONT_STACK}\' font-size="{LABEL_SIZE}" font-weight="600" '
+        f'letter-spacing="{0.08 * LABEL_SIZE:.2f}" fill="{theme["muted"]}">{text}</text></svg>\n'
+    )
+
+
 def readme_block(assets: str) -> str:
-    """The README markup: a label per group, then its chips as inline images."""
+    """The README markup: one row per group, its label then its chips, all inline."""
     groups = []
     for label, tools in GROUPS:
         chips = "\n".join(
@@ -199,7 +229,12 @@ def readme_block(assets: str) -> str:
             f'<img alt="{name}" src="./{assets}/light/{file_slug(name)}.svg"></picture>'
             for name, _, _ in tools
         )
-        groups.append(f"<p><sub><b>{label.upper()}</b></sub><br>\n{chips}\n</p>")
+        heading = (
+            f'<picture><source media="(prefers-color-scheme: dark)" '
+            f'srcset="./{assets}/dark/label-{file_slug(label)}.svg">'
+            f'<img alt="{label}" src="./{assets}/light/label-{file_slug(label)}.svg"></picture>'
+        )
+        groups.append(f"<p>\n{heading}\n{chips}\n</p>")
     return "\n\n".join(groups)
 
 
@@ -213,7 +248,11 @@ def main() -> None:
     for theme_name, theme in THEMES.items():
         folder = args.out / theme_name
         folder.mkdir(parents=True, exist_ok=True)
-        for _, tools in GROUPS:
+        for label, tools in GROUPS:
+            label_svg = render_label(label, theme)
+            (folder / f"label-{file_slug(label)}.svg").write_text(
+                label_svg, encoding="utf-8"
+            )
             for name, slug, brand in tools:
                 svg = render_chip(name, icons[slug], icon_color(brand, theme), theme)
                 (folder / f"{file_slug(name)}.svg").write_text(svg, encoding="utf-8")
