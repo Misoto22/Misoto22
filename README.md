@@ -21,7 +21,7 @@ I build with coding agents — and the harness that keeps them honest. My work s
 
 - **[Touchstone](https://github.com/Misoto22/touchstone)** — Scheduled agent loops that audit a repository and turn findings into PR-only changes, run locally or in GitHub Actions. On PyPI as `touchstone-agent`.<br><sub>Python · LangGraph · SQLite · Codex CLI · Claude Code · GitHub Actions</sub>
 - **[Skills](https://github.com/Misoto22/skills)** — 24 portable agent skills in 7 plugins for Claude Code, Codex and ~70 other agents: ship a PR end to end, clean up merged branches, polish a repository, draft policy-aware email.<br><sub>Agent Skills · Claude Code · Codex · Python</sub>
-- **Kioku** — A personal memory API: PostgreSQL + pgvector with an incremental RAG pipeline, exposed to my agents as MCP tools behind database-enforced access roles.<br><sub>Python · FastAPI · PostgreSQL · pgvector · MCP</sub>
+- **[Kioku](https://misoto22.com/blog/building-a-rag-chatbot)** — A personal memory API: PostgreSQL + pgvector with an incremental RAG pipeline, exposed to my agents as MCP tools behind database-enforced access roles.<br><sub>Python · FastAPI · PostgreSQL · pgvector · MCP</sub>
 
 **Product engineering**
 
