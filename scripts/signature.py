@@ -20,10 +20,7 @@ FONT_URL = "https://gitlab.com/inkscape/extensions/-/raw/master/svg_fonts/EMSAll
 SVG_NS = "{http://www.w3.org/2000/svg}"
 THEMES = {"light": "#1f2328", "dark": "#e6edf3"}
 
-CYCLE_MS = 9000
-DRAW_END = 0.55  # fraction of the cycle spent writing
-ERASE_START = 0.86  # hold the finished signature until here
-ERASE_END = 0.92
+WRITE_MS = 5000  # the whole signature is written once, then held
 STROKE_WIDTH = 26
 PADDING = 40
 JOIN_TOLERANCE = 15  # font units; merges strokes that visually continue
@@ -167,18 +164,13 @@ def length(stroke) -> float:
     return sum(math.dist(a, b) for a, b in itertools.pairwise(stroke))
 
 
-def pct(fraction: float) -> str:
-    return f"{fraction * 100:.2f}%"
-
-
-def keyframes(index: int, dash: int, start: float, end: float) -> str:
-    erase = ERASE_START + (ERASE_END - ERASE_START) * (1 - end / DRAW_END)
+def keyframes(index: int, dash: int, delay_ms: float, duration_ms: float) -> str:
+    """Write one stroke once, in its turn, and keep it drawn afterwards."""
     return (
         f".s{index}{{stroke-dasharray:{dash} {dash + 4};"
-        f"animation:w{index} {CYCLE_MS}ms ease-in-out infinite both}}\n"
-        f"@keyframes w{index}{{0%,{pct(start)}{{stroke-dashoffset:{dash}}}"
-        f"{pct(end)},{pct(erase)}{{stroke-dashoffset:0}}"
-        f"{pct(min(erase + 0.03, 1))},100%{{stroke-dashoffset:{dash}}}}}\n"
+        f"animation:w{index} {duration_ms:.0f}ms ease-in-out {delay_ms:.0f}ms both}}\n"
+        f"@keyframes w{index}{{from{{stroke-dashoffset:{dash}}}"
+        f"to{{stroke-dashoffset:0}}}}\n"
     )
 
 
@@ -191,10 +183,11 @@ def render(strokes, color: str, title: str) -> str:
     total = sum(lengths)
     css, paths, cursor = [], [], 0.0
     for i, (stroke, size) in enumerate(zip(strokes, lengths)):
-        start = DRAW_END * cursor / total
+        # Constant pen speed: each stroke's time is its share of the total length.
+        delay = WRITE_MS * cursor / total
         cursor += size
         dash = math.ceil(size)
-        css.append(keyframes(i, dash, start, DRAW_END * cursor / total))
+        css.append(keyframes(i, dash, delay, WRITE_MS * size / total))
         d = "M" + "L".join(f"{x - min_x:.1f},{y - min_y:.1f}" for x, y in stroke)
         paths.append(f'<path class="s{i}" d="{d}"/>')
     return (

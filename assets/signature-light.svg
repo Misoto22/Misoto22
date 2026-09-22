@@ -2,24 +2,24 @@
 <title>Henry Chen</title>
 <style>
 path{fill:none;stroke:#1f2328;stroke-width:26;stroke-linecap:round;stroke-linejoin:round}
-.s0{stroke-dasharray:1402 1406;animation:w0 9000ms ease-in-out infinite both}
-@keyframes w0{0%,0.00%{stroke-dashoffset:1402}4.30%,91.53%{stroke-dashoffset:0}94.53%,100%{stroke-dashoffset:1402}}
-.s1{stroke-dasharray:1098 1102;animation:w1 9000ms ease-in-out infinite both}
-@keyframes w1{0%,4.30%{stroke-dashoffset:1098}7.66%,91.16%{stroke-dashoffset:0}94.16%,100%{stroke-dashoffset:1098}}
-.s2{stroke-dasharray:962 966;animation:w2 9000ms ease-in-out infinite both}
-@keyframes w2{0%,7.66%{stroke-dashoffset:962}10.61%,90.84%{stroke-dashoffset:0}93.84%,100%{stroke-dashoffset:962}}
-.s3{stroke-dasharray:1221 1225;animation:w3 9000ms ease-in-out infinite both}
-@keyframes w3{0%,10.61%{stroke-dashoffset:1221}14.35%,90.43%{stroke-dashoffset:0}93.43%,100%{stroke-dashoffset:1221}}
-.s4{stroke-dasharray:2857 2861;animation:w4 9000ms ease-in-out infinite both}
-@keyframes w4{0%,14.35%{stroke-dashoffset:2857}23.11%,89.48%{stroke-dashoffset:0}92.48%,100%{stroke-dashoffset:2857}}
-.s5{stroke-dasharray:2704 2708;animation:w5 9000ms ease-in-out infinite both}
-@keyframes w5{0%,23.11%{stroke-dashoffset:2704}31.40%,88.57%{stroke-dashoffset:0}91.57%,100%{stroke-dashoffset:2704}}
-.s6{stroke-dasharray:5028 5032;animation:w6 9000ms ease-in-out infinite both}
-@keyframes w6{0%,31.40%{stroke-dashoffset:5028}46.82%,86.89%{stroke-dashoffset:0}89.89%,100%{stroke-dashoffset:5028}}
-.s7{stroke-dasharray:1221 1225;animation:w7 9000ms ease-in-out infinite both}
-@keyframes w7{0%,46.82%{stroke-dashoffset:1221}50.56%,86.48%{stroke-dashoffset:0}89.48%,100%{stroke-dashoffset:1221}}
-.s8{stroke-dasharray:1448 1452;animation:w8 9000ms ease-in-out infinite both}
-@keyframes w8{0%,50.56%{stroke-dashoffset:1448}55.00%,86.00%{stroke-dashoffset:0}89.00%,100%{stroke-dashoffset:1448}}
+.s0{stroke-dasharray:1402 1406;animation:w0 391ms ease-in-out 0ms both}
+@keyframes w0{from{stroke-dashoffset:1402}to{stroke-dashoffset:0}}
+.s1{stroke-dasharray:1098 1102;animation:w1 306ms ease-in-out 391ms both}
+@keyframes w1{from{stroke-dashoffset:1098}to{stroke-dashoffset:0}}
+.s2{stroke-dasharray:962 966;animation:w2 268ms ease-in-out 697ms both}
+@keyframes w2{from{stroke-dashoffset:962}to{stroke-dashoffset:0}}
+.s3{stroke-dasharray:1221 1225;animation:w3 340ms ease-in-out 965ms both}
+@keyframes w3{from{stroke-dashoffset:1221}to{stroke-dashoffset:0}}
+.s4{stroke-dasharray:2857 2861;animation:w4 796ms ease-in-out 1305ms both}
+@keyframes w4{from{stroke-dashoffset:2857}to{stroke-dashoffset:0}}
+.s5{stroke-dasharray:2704 2708;animation:w5 754ms ease-in-out 2101ms both}
+@keyframes w5{from{stroke-dashoffset:2704}to{stroke-dashoffset:0}}
+.s6{stroke-dasharray:5028 5032;animation:w6 1401ms ease-in-out 2855ms both}
+@keyframes w6{from{stroke-dashoffset:5028}to{stroke-dashoffset:0}}
+.s7{stroke-dasharray:1221 1225;animation:w7 340ms ease-in-out 4256ms both}
+@keyframes w7{from{stroke-dashoffset:1221}to{stroke-dashoffset:0}}
+.s8{stroke-dasharray:1448 1452;animation:w8 404ms ease-in-out 4596ms both}
+@keyframes w8{from{stroke-dashoffset:1448}to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){path{animation:none!important}}
 </style>
 <path class="s0" d="M459.0,220.9L459.5,221.0L460.9,221.2L462.9,221.4L465.4,221.5L468.1,221.4L471.0,220.9L482.5,216.9L498.5,209.9L517.0,200.7L536.2,190.1L554.2,178.9L569.0,167.9L578.7,158.7L587.2,148.7L594.9,138.4L602.0,127.9L609.0,117.7L616.0,107.9L623.0,98.7L630.7,88.4L638.2,78.2L644.7,69.4L649.3,63.2L651.0,60.9L649.3,65.8L644.8,79.1L638.1,98.4L630.1,121.7L621.5,146.6L613.0,170.9L597.2,217.2L578.9,272.4L558.7,332.6L537.2,394.0L515.1,452.7L493.0,504.9L475.1,542.1L456.7,577.4L437.8,611.0L418.7,643.1L399.4,673.7L380.0,703.2L363.7,727.6L347.6,751.5L331.3,774.5L314.6,795.9L297.3,815.4L279.0,832.4L262.4,845.0L244.7,856.3L226.6,866.3L208.5,874.6L191.3,881.2L175.3,885.9L165.2,887.9L155.6,889.1L146.4,889.3L137.3,888.8L128.2,887.7L118.6,885.9L105.9,882.8L91.9,878.4L77.7,873.0L64.5,867.1L53.5,860.7L46.0,854.4L43.5,850.4L41.8,845.7L40.8,840.9L40.3,836.6L40.0,833.6L40.0,832.4"/>
