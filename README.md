@@ -50,7 +50,7 @@ I build with coding agents — and the harness that keeps them honest. My work s
 <p align="center">
 <a href="https://misoto22.com/photography"><img src="https://raw.githubusercontent.com/Misoto22/Misoto22/output/photo-1.jpg" alt="Golden Hour Through the Trees, Hawkesbury" title="Golden Hour Through the Trees, Hawkesbury" width="32%"></a>
 <a href="https://misoto22.com/photography"><img src="https://raw.githubusercontent.com/Misoto22/Misoto22/output/photo-2.jpg" alt="Dawn From the Window Seat, Palawan" title="Dawn From the Window Seat, Palawan" width="32%"></a>
-<a href="https://misoto22.com/photography"><img src="https://raw.githubusercontent.com/Misoto22/Misoto22/output/photo-3.jpg" alt="Dawn on the Bali Sea, Lovina" title="Dawn on the Bali Sea, Lovina" width="32%"></a>
+<a href="https://misoto22.com/photography"><img src="https://raw.githubusercontent.com/Misoto22/Misoto22/output/photo-3.jpg" alt="Veiled in Red on the Dunes, Anna Bay" title="Veiled in Red on the Dunes, Anna Bay" width="32%"></a>
 </p>
 
 <!-- photos:end -->
